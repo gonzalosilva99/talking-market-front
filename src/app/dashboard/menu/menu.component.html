@@ -1,0 +1,58 @@
+<section class="menu">
+  <div class="first">
+    <div class="logo">
+      <figure class="logo">
+        <img src="../../../assets/img/logo.png" alt="" />
+      </figure>
+    </div>
+    <div class="search">
+      <div class="p-inputgroup">
+        <input
+          type="text"
+          pInputText
+          placeholder="Search"
+          (keyup)="inputChange($event)"
+        />
+        <button
+          type="button"
+          pButton
+          pRipple
+          icon="pi pi-search"
+          class="sky-blue"
+          styleClass="p-button-warn"
+        ></button>
+      </div>
+    </div>
+  </div>
+  <div class="second">
+    <div class="invoice">
+      <i
+        class="pi pi-file"
+        *ngIf="user.isOwner"
+        (click)="showInvoice = true"
+      ></i>
+    </div>
+    <div class="cart" (click)="showCart = true">
+      <i class="pi pi-shopping-cart"></i>
+      <span class="amount" *ngIf="amountOfProducts">{{
+        amountOfProducts
+      }}</span>
+    </div>
+    <div class="user" (click)="menu.toggle($event)">
+      <span class="first-name">{{ user.firstname }} {{ user.lastname }}</span>
+      <figure class="profile">
+        <img [src]="user.image" />
+      </figure>
+      <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
+    </div>
+  </div>
+</section>
+<app-product-checkout
+  *ngIf="showCart"
+  (close)="showCart = false"
+></app-product-checkout>
+<app-invoice *ngIf="showInvoice" (close)="showInvoice = false"></app-invoice>
+<app-my-orders
+  *ngIf="showMyOrders"
+  (close)="showMyOrders = false"
+></app-my-orders>

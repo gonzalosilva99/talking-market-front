@@ -1,0 +1,32 @@
+<section class="modal my-orders" (click)="close.emit()">
+  <div class="modal-box" (click)="$event.stopPropagation()">
+    <div class="header">
+      <span class="title">My orders</span>
+      <i class="pi pi-times close" (click)="close.emit()"></i>
+    </div>
+    <div class="body">
+      <p-table [value]="orders" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Date</th>
+            <th>Products * Units</th>
+            <th>Total price</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-order>
+          <tr *ngIf="order">
+            <td>{{ order.createdAt }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let product of order.products">
+                  {{ product.name }} * {{ product.UnitsProducts.units }}
+                </li>
+              </ul>
+            </td>
+            <td>${{ priceOfOrders[order.id] }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</section>

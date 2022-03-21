@@ -1,0 +1,6 @@
+section.modal.invoice {}
+section.modal.invoice .modal-box{width: 30vw; height: 70vh;}
+section.modal.invoice .modal-box .body {max-height:calc(100% - 50px - 55px);overflow-y: auto;}
+section.modal.invoice .modal-box .body .date-picker-block .date-picker{height:100%}
+section.modal.invoice .modal-box .body .date-picker-block p-table{height:calc(100% - 19px)}
+section.modal.invoice .modal-box .body .profits-block .total{text-align:center;margin-top:10px;font-weight: bold; font-size: 20px;}

@@ -1,0 +1,58 @@
+<section class="modal invoice" (click)="close.emit()">
+  <div class="modal-box" (click)="$event.stopPropagation()">
+    <div class="header">
+      <span class="title">Daily profit invoice</span>
+      <i class="pi pi-times close" (click)="close.emit()"></i>
+    </div>
+    <div class="body">
+      <div class="date-picker-block" *ngIf="!datePicked">
+        <p-calendar
+          class="date-picker"
+          [(ngModel)]="selectedDate"
+          inputId="date"
+          dateFormat="yy-mm-dd"
+          [inline]="true"
+          [showWeek]="true"
+          (onSelect)="isDateSelected = true"
+        ></p-calendar>
+      </div>
+      <div class="profits-block" *ngIf="datePicked">
+        <p-table [value]="profits" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Cost</th>
+              <th>Sold units</th>
+              <th>Profit</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-profit>
+            <tr *ngIf="profits">
+              <td>{{ profit.product.name }}</td>
+              <td>${{ profit.product.price }}</td>
+              <td>${{ profit.product.cost }}</td>
+              <td>
+                {{
+                  profit.profit / (profit.product.price - profit.product.cost)
+                }}
+              </td>
+              <td>${{ profit.profit }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <p class="total">Total: ${{ total }}</p>
+      </div>
+    </div>
+    <div class="footer">
+      <button
+        *ngIf="!datePicked"
+        pButton
+        class="button sky-blue rounded p-button-sm"
+        label="Next"
+        [disabled]="!isDateSelected"
+        (click)="datePicked = !datePicked; getInvoice()"
+      ></button>
+    </div>
+  </div>
+</section>

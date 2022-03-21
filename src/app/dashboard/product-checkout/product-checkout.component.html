@@ -1,0 +1,36 @@
+<section class="modal product-checkout" (click)="close.emit()">
+  <div class="modal-box" (click)="$event.stopPropagation()">
+    <div class="header">
+      <span class="title">Checkout</span>
+      <i class="pi pi-times close" (click)="close.emit()"></i>
+    </div>
+    <div class="body">
+      <p-table [value]="products" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Units</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr *ngIf="product">
+            <td>{{ product.product.name }}</td>
+            <td>{{ product.product.price }}</td>
+            <td>{{ product.units }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+    <div class="footer">
+      <button
+        pButton
+        class="button sky-blue rounded p-button-sm"
+        label="Proceed to payment"
+        [disabled]="!products?.length"
+        (click)="createOrder()"
+      ></button>
+    </div>
+  </div>
+</section>
+<p-toast position="top-center" key="tc"></p-toast>

@@ -1,0 +1,27 @@
+section.product-list{padding: 2rem; background-color: #fafafa;height: calc(100% - 60px);}
+section.product-list .p-datatable{ box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);border: 1px #b0b0b0 solid;border-radius: 0.5rem; }
+section.product-list .p-datatable-wrapper{border-radius: 0.5rem;overflow: hidden; }
+section.product-list .p-paginator-bottom{ border-radius: 0.5rem;overflow: hidden;}
+section.product-list table .p-datatable-thead{text-align: center;}
+section.product-list table th{text-align: center !important;}
+section.product-list table td{text-align: center !important;}
+section.product-list table td.name{ vertical-align: middle;}
+section.product-list table td.name span{}
+section.product-list table td.image{}
+section.product-list table td.image figure{ display:inline-block;width: 100px; height: 80px; overflow: hidden;}
+section.product-list table td.image figure img{width: 100%; height: 100%; object-fit: cover;}
+section.product-list table td.price{ vertical-align: middle;}
+section.product-list table td.stock{ vertical-align: middle;}
+section.product-list table td.stock .product-badge{border-radius: 2px; padding: 0.25em 0.5rem; text-transform: uppercase; font-weight: 700; font-size: 12px; letter-spacing: .3px;}
+section.product-list table td.stock .product-badge.status-instock{ content: 'IN STOCK'; background: #C8E6C9; color: #256029; }
+section.product-list table td.stock .product-badge.status-instock::before{ content: 'IN STOCK'; }
+section.product-list table td.stock .product-badge.status-lowstock{ background: #FEEDAF; color: #8a5340; }
+section.product-list table td.stock .product-badge.status-lowstock::before{ content:'LOW STOCK'; }
+section.product-list table td.stock .product-badge.status-outofstock{ background: #FFCDD2; color: #c63737; }
+section.product-list table td.stock .product-badge.status-outofstock::before{ content: 'OUT OF STOCK'; }
+section.product-list table td.select-items { vertical-align: middle; }
+section.product-list table td.select-items .units{ line-height: 25px; text-align: center; margin: 0 10px; font-size: 15px; font-weight: bold; }
+section.product-list table td.select-items button{ width: 25px !important; height: 25px !important;}
+section.product-list table td.select-items .minus-button{ background-color: #df3c3c; border: 1px solid #df3c3c;}
+section.product-list table td.select-items .minus-button:hover{ background-color: #cf2e2e; border: 1px solid #cf2e2e;}
+section.product-list table td.select-items .add-button{background-color: #429BD7 !important;}

@@ -1,0 +1,31 @@
+<section class="login">
+  <div class="login-box">
+    <div class="login-content">
+      <figure class="logo">
+        <img src="../../../assets/img/logo.png" alt="" />
+      </figure>
+      <form class="form" [formGroup]="form">
+        <span class="p-float-label">
+          <input id="email" type="text" pInputText formControlName="email" />
+          <label for="email">Email</label>
+        </span>
+        <span class="p-float-label">
+          <input
+            id="password"
+            type="password"
+            pInputText
+            formControlName="password"
+          />
+          <label for="password">Password</label>
+        </span>
+        <button
+          pButton
+          class="button sky-blue rounded p-button-sm"
+          label="Login"
+          (click)="login()"
+          [disabled]="!form.valid"
+        ></button>
+      </form>
+    </div>
+  </div>
+</section>

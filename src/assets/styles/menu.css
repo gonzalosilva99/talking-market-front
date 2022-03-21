@@ -1,0 +1,19 @@
+section.menu {display: flex; flex-direction: row; width: 100vw; height: 60px; border-bottom: 1px solid #00000041; justify-content: space-between; align-items: center;}
+section.menu .first{display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-left: 30px;}
+section.menu .second{display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-right: 30px;}
+section.menu div.logo{margin-right: 40px;}
+section.menu div.logo figure.logo{}
+section.menu div.logo figure.logo img{}
+section.menu div.search{}
+section.menu div.search input{height: 35px; width: 300px;}
+section.menu div.search button{height: 35px;}
+section.menu div.invoice{ margin-right: 15px; border-radius: 100%; text-align: center; } 
+section.menu div.invoice i{ display: block; font-size: 30px; line-height: 30px; width: 30px; height: 30px; }
+section.menu div.cart{margin-right: 30px; position: relative; }
+section.menu div.cart .amount{ display: block; position: absolute; top: -5px; right: -5px; background-color: #df3c3c; color: azure; font-size: 10px; line-height: 17px; width: 17px; height: 17px; border-radius: 100%; text-align: center; }
+section.menu div.cart i{display: block; width: 30px; height: 30px; line-height: 30px; font-size: 30px;}
+section.menu div.user{display: flex; align-items: center;}
+section.menu div.user:hover{cursor: pointer;}
+section.menu div.user span.first-name{margin-right: 10px;}
+section.menu div.user figure.profile{display: inline-block; width: 40px; height: 40px; overflow: hidden; border: 1px solid #00000041; border-radius: 100%; box-shadow: 1px 0px 3px #00000041;}
+section.menu div.user figure.profile img{height: 100%; object-fit: cover;}  

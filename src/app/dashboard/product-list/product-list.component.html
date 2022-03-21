@@ -1,0 +1,71 @@
+<section class="product-list">
+  <p-table
+    #dt
+    [value]="productsFiltered"
+    [rows]="4"
+    [globalFilterFields]="['name', 'price', 'stock']"
+    [rowHover]="true"
+    [paginator]="true"
+  >
+    <!-- HEADER -->
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name">
+          Name <p-sortIcon field="name"></p-sortIcon>
+        </th>
+        <th>Image</th>
+        <th pSortableColumn="price">
+          Price <p-sortIcon field="price"></p-sortIcon>
+        </th>
+        <th pSortableColumn="stock">
+          Stock <p-sortIcon field="stock"></p-sortIcon>
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <!-- BODY -->
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td class="name">
+          <span>{{ product.name }}</span>
+        </td>
+        <td class="image">
+          <figure>
+            <img
+              [src]="product.image"
+              [alt]="product.name"
+              width="100"
+              class="shadow-4"
+            />
+          </figure>
+        </td>
+        <td class="price">{{ product.price | currency: "USD" }}</td>
+        <td class="stock">
+          <span *ngIf="isOwner">{{ product.stock }}</span>
+          <span
+            *ngIf="!isOwner"
+            [class]="'product-badge status-' + (product.stock | stockLevel)"
+          ></span>
+        </td>
+        <td class="select-items">
+          <button
+            pButton
+            (click)="removeProduct(product)"
+            pRipple
+            icon="pi pi-minus"
+            class="p-button-rounded mr-2 minus-button"
+          ></button>
+          <span class="units">{{ productsToBuy[product.id]?.units || 0 }}</span>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-plus"
+            class="p-button-rounded add-button"
+            (click)="addProduct(product)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</section>
+<p-toast position="top-center" key="tc"></p-toast>

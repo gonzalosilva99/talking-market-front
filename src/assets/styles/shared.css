@@ -1,0 +1,14 @@
+button.sky-blue{background: #429BD7 !important; border: 1px solid #429BD7 !important;}
+button.rounded{border-radius: 50px;}
+button.sky-blue:hover{background: #216AB9 !important; border: 1px solid #216AB9 !important;}
+
+
+/* MODAL */
+section.modal {display: flex; align-items: center; justify-content: center; position: fixed; width: 100vw; height: 100vh; z-index: 1000; background-color: #00000067; top: 0; left: 0;}
+section.modal .modal-box{display: flex; position: relative; flex-direction: column; width: 500px; height: 400px; background-color: #FFFFFF; border-radius: 10px; border: 1px solid #00000067; box-shadow: 0 0 3px #00000044;}
+section.modal .modal-box .header{display: flex; position: relative; width: 100%; height: 50px; flex-direction: row;}
+section.modal .modal-box .header .title{display: inline-block; width: 100%; font-size: 20px; font-weight: 500; align-self: center; justify-self: center; text-align: center; }
+section.modal .modal-box .header .close{position: absolute; top: 10px; right: 10px; font-weight: 600; }
+section.modal .modal-box .header .close:hover{cursor: pointer;}
+section.modal .modal-box .body{}
+section.modal .modal-box .footer{display: flex; width: 100%; position: absolute; bottom: 0; left: 0; padding: 10px; justify-content: flex-end;}

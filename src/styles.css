@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('assets/styles/login.css');
+@import url('assets/styles/reset.css');
+@import url('assets/styles/shared.css');
+@import url('assets/styles/menu.css');
+@import url('assets/styles/product-list.css');
+@import url('assets/styles/product-checkout.css');
+@import url('assets/styles/invoice.css');
+@import url('assets/styles/my-orders.css');
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
