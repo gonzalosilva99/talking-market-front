@@ -41,7 +41,10 @@
     <div class="user" (click)="menu.toggle($event)">
       <span class="first-name">{{ user.firstname }} {{ user.lastname }}</span>
       <figure class="profile">
-        <img [src]="user.image" />
+        <img
+          src="{{ user.image }}"
+          onerror="this.src='../assets/img/profile.jpg'"
+        />
       </figure>
       <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
     </div>

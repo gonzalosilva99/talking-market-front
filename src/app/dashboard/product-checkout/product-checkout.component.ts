@@ -18,6 +18,7 @@ import { MessageService } from 'primeng/api';
 export class ProductCheckoutComponent implements OnInit {
   // public productsSubscription: Subscription;
   public products: ProductToBuy[] = [];
+  public totalAmount: number = 0;
 
   @Output() close = new EventEmitter();
   constructor(
@@ -27,6 +28,9 @@ export class ProductCheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productService.getProductsToBuy?.filter((n) => n);
+    this.products.forEach((prod) => {
+      this.totalAmount += prod.product.price * prod.units;
+    });
   }
 
   createOrder = async () => {

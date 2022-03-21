@@ -1,2 +1,3 @@
 section.modal.product-checkout {}
 section.modal.product-checkout .modal-box{width: 65vw; height: 70vh;}
+section.modal.product-checkout .modal-box .body .total{text-align:center;margin-top:10px;font-weight: bold; font-size: 20px;}

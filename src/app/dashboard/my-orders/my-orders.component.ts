@@ -10,6 +10,8 @@ import { OrderDto } from 'src/app/core/types/dtos';
 export class MyOrdersComponent implements OnInit {
   public orders: OrderDto[] = [];
   public priceOfOrders: number[] = [];
+  public dateOfOrders: string[] = [];
+  toLocalDate = this.toLocalDateString;
   @Output() close = new EventEmitter();
 
   constructor(private productService: ProductService) {}
@@ -35,4 +37,8 @@ export class MyOrdersComponent implements OnInit {
       });
     });
   };
+
+  private toLocalDateString(date: Date) {
+    return date.toISOString().slice(0, 10);
+  }
 }

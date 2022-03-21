@@ -33,7 +33,7 @@ export interface OrderDto {
   id: number;
   description: string;
   userId: number;
-  createdAt: Date;
+  createdAt: string;
   products: ProductUnitDto[];
 }
 

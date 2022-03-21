@@ -15,7 +15,9 @@
         </ng-template>
         <ng-template pTemplate="body" let-order>
           <tr *ngIf="order">
-            <td>{{ order.createdAt }}</td>
+            <td>
+              {{ order.createdAt.slice(0, 10) }}
+            </td>
             <td>
               <ul>
                 <li *ngFor="let product of order.products">
